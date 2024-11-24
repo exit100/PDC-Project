@@ -1,6 +1,6 @@
 OUTPUTDIR := bin/
 
-CFLAGS := -std=c++14 -fvisibility=hidden -lpthread -Wall
+CFLAGS := -std=c++14 -fvisibility=hidden -lpthread -fopenmp -Wall
 
 ifeq (,$(CONFIGURATION))
 	CONFIGURATION := release

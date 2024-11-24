@@ -9,9 +9,9 @@ for i in range(5000):
     for j in range(i + 1, 5000):
         f1.write(str(i) + " " + str(j) + "\n")
 f1.close()
-'''
 
-'''
+
+ 
 # Test 2: random-5000
 # |V| = 5,000, |E| = 2,500,000
 f1 = open("random-5000.txt", "w")
@@ -24,9 +24,10 @@ while pairs_count < 2500000:
         f1.write(str(first) + " " + str(second) + "\n")
         pairs_count += 1
 f1.close()
-'''
+ 
 
-'''
+
+
 # Test 3: random-50000
 # |V| = 50,000, |E| = 250,000,000
 f1 = open("random-50000.txt", "w")
@@ -39,6 +40,35 @@ while pairs_count < 250000000:
         f1.write(str(first) + " " + str(second) + "\n")
         pairs_count += 1
 f1.close()
+'''
+'''
+# Test 3: random-50000
+# |V| = 50,000, |E| = 250,000,000
+f1 = open("random-50000.txt", "w")
+f1.write("50000\n")
+pairs_count = 0
+while pairs_count < 100000000:
+    first = random.randrange(0, 50000)
+    second = random.randrange(0, 50000)
+    if first != second:
+        f1.write(str(first) + " " + str(second) + "\n")
+        pairs_count += 1
+f1.close()
+'''
+# Test 3: random-50000
+# |V| = 50,000, |E| = 250,000,000
+f1 = open("random-40000.txt", "w")
+f1.write("50000\n")
+pairs_count = 0
+while pairs_count < 175000000:
+    first = random.randrange(0, 40000)
+    second = random.randrange(0, 40000)
+    if first != second:
+        f1.write(str(first) + " " + str(second) + "\n")
+        pairs_count += 1
+f1.close()
+
+
 '''
 
 
@@ -55,7 +85,7 @@ while pairs_count < 1000000:
         pairs_count += 1
 f1.close()
 
-'''
+
 # Test 5: sparse-500000
 # |V| = 500,000, |E| = 10,000,000
 f1 = open("sparse-500000.txt", "w")
@@ -69,6 +99,7 @@ while pairs_count < 10000000:
         pairs_count += 1
 f1.close()
 
+ 
 # Test 6: very-sparse-50000
 # |V| = 50,000, |E| = 100,000
 f1 = open("very-sparse-50000.txt", "w")
@@ -131,4 +162,14 @@ for k in range(5):
             f1.write(str(first) + " " + str(second) + "\n")
             pairs_count += 1
 f1.close()
-'''
+ 
+
+# Test 10: complete-8000
+# |V| = 8,000, |E| = 31,996,000
+f1 = open("complete-8000.txt", "w")
+f1.write("8000\n")
+for i in range(8000):
+    for j in range(i + 1, 8000):
+        f1.write(str(i) + " " + str(j) + "\n")
+f1.close()
+ '''
