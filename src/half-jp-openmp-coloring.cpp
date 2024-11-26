@@ -7,15 +7,12 @@ class HalfJPOpenMPColorGraph : public ColorGraph {
 public:
   void buildGraph(std::vector<graphNode> &nodes, std::vector<std::pair<int, int>> &pairs,
                   std::unordered_map<graphNode, std::vector<graphNode>> &graph) {
-    // note: I don't think you can actually parallelize this part?
-    // #pragma omp parallel for shared(nodes, graph)
     for (auto &node : nodes) {
       graph[node] = {};
     }
   
     size_t numPairs = pairs.size();
-
-    // #pragma omp parallel for schedule(static, 1) shared(pairs, graph)
+    
     for (size_t i = 0; i < numPairs; i++) {
       int first = pairs[i].first;
       int second = pairs[i].second;
@@ -46,8 +43,8 @@ public:
 
   void colorGraph(std::unordered_map<graphNode, std::vector<graphNode>> &graph,
                   std::unordered_map<graphNode, color> &colors) {
-    
     int numNodes = (int) graph.size(); 
+    //#pragma omp parallel for
     for (int i = 0; i < numNodes; i++) {
       colors[i] = -1;
     }
